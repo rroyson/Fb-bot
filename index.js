@@ -2,7 +2,6 @@
 
 require('dotenv').config()
 
-const { ACCESS_TOKEN } = process.env
 const handleMessage = require('./lib/handleMessage')
 const handlePostback = require('./lib/handlePostback')
 const express = require('express')
