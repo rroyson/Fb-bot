@@ -1,7 +1,7 @@
 'use strict'
 
 require('dotenv').config()
-
+const { VERIFY_TOKEN } = process.env
 const handleMessage = require('./lib/handleMessage')
 const handlePostback = require('./lib/handlePostback')
 const express = require('express')
@@ -39,8 +39,6 @@ app.post('/webhook', (req, res) => {
 // Adds support for GET requests to our webhook
 
 app.get('/webhook', (req, res) => {
-  let VERIFY_TOKEN = 'super-secret'
-
   // Parse the query params
   let mode = req.query['hub.mode']
   let token = req.query['hub.verify_token']
